@@ -1,0 +1,164 @@
+    @import url('https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background:#e1e6e3 ;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.card-to-do {
+display: flex;
+justify-content: center;
+height: 770px;
+    
+}
+.subContainer{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+	padding: 30px;
+	border-radius: 20px;
+	width: 700px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+h1,h3{
+    text-align: center;
+    font-family: 'Sono', sans-serif;
+    margin: 5px;
+}
+
+.add-todo {
+    font-family: 'Sono', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+   
+}
+
+.input-add{
+    padding: 10px 20px;
+    width: 100%;
+    border:2px solid rgb(215, 215, 215);
+    border-radius: 10px;
+    font-family: 'Sono', sans-serif;
+}
+
+.btn-add {
+    border: 1px solid rgb(247, 244, 244);
+    background-color: #21a3a3;
+	color: #fff;
+	padding: 5px 40px;
+	border-radius: 20px;
+	font-family: inherit;
+	cursor: pointer;
+	font-size: 17px;
+}
+.ul-edit{
+    list-style: none;
+    border: 2px solid rgb(232, 232, 232);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y:auto ;
+}
+.li{
+    border: 2px solid rgb(232, 232, 232);
+    border-radius: 10px;
+    background-color: #e7efef;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.conten_li{
+    display: flex;
+    flex-direction: column;
+}
+span{
+    font-weight: 300;
+    font-family: 'Sono', sans-serif;
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif   ;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+}
+
+.btn-1 {
+    color: white;
+    width: 15px;
+    height: 15px;
+    
+}
+
+.btn-2 {
+    color: white;
+    width: 15px;
+    height: 15px;   
+}
+
+.btn-3 {
+    border-radius: 75px;
+    border: #fff;
+    background-color:#21a3a3;
+    width: 35px;
+    height: 35px;
+}
+
+.btn-4 {
+    border-radius: 75px;
+    border: #fff;
+    background-color:#ac0d0d;
+    width: 35px;
+    height: 35px;
+}
+
+.btn-guardar{
+    background-color: #21a3a3;
+    width: 70px;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: #e1e6e3;
+}
+
+.input-edit{
+    padding: 10px 20px;
+    width: 400px;
+    border:2px solid rgb(215, 215, 215);
+    border-radius: 10px;
+    font-family: 'Sono', sans-serif;
+}
+

@@ -1,0 +1,28 @@
+###
+POST http://localhost:8000/api/tareas HTTP/1.1
+Content-Type: application/json
+
+{
+  "tarea": "Aprender React con ADA",
+  "descripcion": "Aprendiendo React con ADA School",
+  "estado": true
+}
+
+###
+GET http://localhost:8000/api/tareas HTTP/1.1
+
+###
+GET http://localhost:8000/api/tareas/6137e2bb2e329eb206b0073e HTTP/1.1
+
+###
+DELETE http://localhost:8000/api/tareas/6137e1725461c36eba8b2ce4 HTTP/1.1
+
+###
+PUT http://localhost:8000/api/tareas/6137e2412e329eb206b0073c HTTP/1.1
+Content-Type: application/json
+
+{
+  "tarea": "Tarea nueva",
+  "descripcion": "Nueva tarea",
+  "estado": false
+}
