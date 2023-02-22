@@ -5,6 +5,7 @@ import {
   useActualizarTareasMutation,
   useEliminarTareasMutation,
 } from "../Redux/Api";
+import "../App.css";
 
 export const TodoItem = ({ todo }) => {
   const [actualizar, setActualizar] = useState(false);
@@ -90,11 +91,9 @@ export const TodoItem = ({ todo }) => {
         <li className="li">
           <div>
             <div className="conten_li">
-              <span>Nombre:</span>
-              <p>{todo.tarea}</p>
+              <p style={{ fontWeight: "bold" }}>{todo.tarea}</p>
             </div>
             <div className="conten_li">
-              <span>Descripcion:</span>
               <p>{todo.descripcion}</p>
             </div>
           </div>

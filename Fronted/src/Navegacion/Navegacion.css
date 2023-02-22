@@ -1,55 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap");
 .navegacion {
-    width: 100%;
-    height: 100px;
-    background-color: #21a3a3;
-    display: flex;
-    justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  background-color: #02031a;
+  display: flex;
+  justify-content: space-around;
 }
 
 .ul-navegacion {
-    display: flex;
-    gap: 500px;
-    list-style: none;
-    text-decoration: none;
-    align-items: center;
-    font-family:'Sono', sans-serif;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Sono", sans-serif;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  font-size: 30px;
 }
 
 .link-navegacion {
-    text-decoration: none;
-    font-size: 30px;
-    color: white;
-    
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+}
+.link-navegacion:hover {
+  color: #21a3a3;
+}
+
+.li-hover:hover {
+  color: #21a3a3;
+  transform: translateY(-3px) scale(1.05);
 }
 
 h2 {
-    text-align: center;
-    font-family:'Sono', sans-serif;
+  text-align: center;
+  font-family: "Sono", sans-serif;
 }
-p{
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+.p-edit {
+  display: flex;
+  justify-content: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
 }
 
-ol{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-evenly;
+ol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
 }
 
 .contenedor-about {
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-	padding: 30px;
-	border-radius: 20px;
-	width: 700px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin: auto;
-    margin-top: 25px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  width: 700px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: auto;
+  margin-top: 25px;
 }
+
+.contenedor {
+  margin-top: 60px;
+}
+
 

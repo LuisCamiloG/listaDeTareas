@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "tarea": "Aprender React con ADA",
   "descripcion": "Aprendiendo React con ADA School",
-  "estado": true
+  "usuario": "63ea6531afab6b46ef5cf3ca"
 }
 
 ###

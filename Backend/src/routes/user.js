@@ -1,11 +1,11 @@
 const express = require("express");
-const userSchema = require("../models/usuario");
+const taskSchema = require("../models/tareas");
 
 const router = express.Router();
 
 // create user
 router.post("/tareas", (req, res) => {
-  const user = userSchema(req.body);
+  const user = taskSchema(req.body);
   user
     .save()
     .then((data) => res.json(data))
@@ -14,7 +14,7 @@ router.post("/tareas", (req, res) => {
 
 // get all users
 router.get("/tareas", (req, res) => {
-  userSchema
+  taskSchema
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
@@ -23,7 +23,7 @@ router.get("/tareas", (req, res) => {
 // get a user
 router.get("/tareas/:id", (req, res) => {
   const { id } = req.params;
-  userSchema
+  taskSchema
     .findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
@@ -33,7 +33,7 @@ router.get("/tareas/:id", (req, res) => {
 router.put("/tareas/:id", (req, res) => {
   const { id } = req.params;
   const { tarea, descripcion } = req.body;
-  userSchema
+  taskSchema
     .updateOne({ _id: id }, { $set: { tarea, descripcion } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
@@ -42,7 +42,7 @@ router.put("/tareas/:id", (req, res) => {
 // delete a user
 router.delete("/tareas/:id", (req, res) => {
   const { id } = req.params;
-  userSchema
+  taskSchema
     .remove({ _id: id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));

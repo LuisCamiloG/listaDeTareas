@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // Define a service using a base URL and expected endpoints
 export const Api = createApi({
     reducerPath: 'Api',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/tareas' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000' }),
     tagTypes: ["alias", "refreshGetTasks", "refreshPostTasks"],
     keepUnusedDataFor: 3,
     refetchOnMountOrArgChange: true,
@@ -14,7 +14,8 @@ export const Api = createApi({
         ObtenerTareas: builder.query({
             query: () => ({
                 method: 'GET',
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "application/json" },
+                url: '/api/tareas'
             }),
             providesTags: ["refreshGetTasks"]
         }),
@@ -22,6 +23,7 @@ export const Api = createApi({
             query: (dateTask) => ({
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
+                url: '/api/tareas',
                 body: dateTask
             }),
             invalidatesTags: ["refreshPostTasks", "refreshGetTasks"]
@@ -29,7 +31,7 @@ export const Api = createApi({
         EliminarTareas: builder.mutation({
             query: ({ _id }) => ({
                 method: 'DELETE',
-                url: `/${_id}`,
+                url: `/api/tareas/${_id}`,
                 headers: { "Content-Type": "application/json" },
             }),
             invalidatesTags: ["refreshGetTasks", "refreshPostTasks"]
@@ -37,7 +39,7 @@ export const Api = createApi({
         ActualizarTareas: builder.mutation({
             query: ({ _id, datoTask }) => ({
                 method: 'PUT',
-                url: `/${_id}`,
+                url: `/api/tareas/${_id}`,
                 headers: { "Content-Type": "application/json" },
                 body: datoTask
             }),

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@800&display=swap');
+
+.login{
+    position: absolute;
+    top: 35px;
+    left: 97%;
+}
+
+.btn-login {
+    background-color: rgb(243, 243, 243);
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    color: #21a3a3;
+}.btn-login:hover{
+    transform: translateY(-3px) scale(1.05);
+}
+
+.contenedor-login {
+    width: 500px;
+    height: 380px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: stretch;
+    border-radius: 20px;
+    border: 2px solid #02031a;
+    background-color: white;
+}
+
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.input-edit-login{
+    padding: 10px 20px;
+    width: 400px;
+    border:2px solid #02031a;
+    border-radius: 10px;
+    font-family: 'Sono', sans-serif;
+}
+
+.btn-ingresar {
+    border: 1px solid rgb(247, 244, 244);
+    background-color: #02031a;
+	color: #fff;
+	padding: 7px 45px;
+	border-radius: 20px;
+	font-family: inherit;
+	cursor: pointer;
+	font-size: 17px;
+}.btn-ingresar:hover{
+    transform: translateY(-3px) scale(1.05);
+    background-color: #21a3a3;
+}
+.p-login{
+    font-family: 'Sono', sans-serif;
+}
+

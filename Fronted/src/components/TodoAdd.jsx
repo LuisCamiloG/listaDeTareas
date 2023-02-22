@@ -16,6 +16,7 @@ export const TodoAdd = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createTaks(dateTask);
+    e.target.reset();
   };
   return (
     <form className="form-edit" onSubmit={handleSubmit}>
