@@ -10,7 +10,7 @@ function Home() {
     <div style={{ width: "100%", height: "93%" }}>
       <NavBar />
       <div className="h1-cont">
-        <h1>Hola!, {profileAuth?.user?.usuario}</h1>
+        <h1>Hola!, {profileAuth?.user?.nombre}</h1>
       </div>
       <div className="contenedor-home">
         <div className="subContainer-home">

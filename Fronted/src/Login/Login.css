@@ -18,7 +18,7 @@
 
 .contenedor-login {
     width: 500px;
-    height: 380px;
+    height: 450px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -28,14 +28,17 @@
     align-content: stretch;
     border-radius: 20px;
     border: 2px solid #02031a;
-    background-color: white;
+    background: #283048;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .edit-form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
 }
 
 .input-edit-login{
@@ -59,7 +62,33 @@
     transform: translateY(-3px) scale(1.05);
     background-color: #21a3a3;
 }
+
+.btns-login {
+    display: flex;
+    gap: inherit;
+}
 .p-login{
     font-family: 'Sono', sans-serif;
 }
+
+/* Diseño del register */
+
+.contenedor-register{
+    width: 500px;
+    height: 595px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: stretch;
+    border-radius: 20px;
+    border: 2px solid #02031a;
+    background: #283048;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 

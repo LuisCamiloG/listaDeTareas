@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { loginRequest } from "../Axios/axios";
 import NavbarGlobal from "../Navegacion/NavbarGlobal";
 import { useAuthStore } from "../Redux/zustand";
+// import Register from "./register";
 
 const Login = () => {
   const setProfileAuth = useAuthStore((state) => state.setProfile);
@@ -21,7 +22,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await loginRequest(dataLogin);
-    console.log(data);
+    // console.log(data);
     setProfileAuth(data?.data);
     navigate("/home");
   };
@@ -49,9 +50,18 @@ const Login = () => {
               onChange={onChangue}
             />
           </label>
-          <div>
+          <div className="btns-login">
             <button type="submit" className="btn-ingresar">
               Ingresar
+            </button>
+            <button
+              type="submit"
+              className="btn-ingresar"
+              onClick={(e) => {
+                navigate("/register");
+              }}
+            >
+              Registrate!
             </button>
           </div>
         </form>

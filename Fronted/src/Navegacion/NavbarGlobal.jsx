@@ -10,7 +10,7 @@ export default function NavbarGlobal() {
           <li>Bienvenido al mejor sitio Web!</li>
         </ul>
         <ul>
-          <li>
+          <li style={{ listStyle: "none" }}>
             <Link to="/Login" className="login">
               <FaUserAlt className="btn-login" />
             </Link>

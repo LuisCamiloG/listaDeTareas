@@ -1,23 +1,29 @@
 import React from "react";
 import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { AiOutlineCheckCircle } from "react-icons/ai";
+import { BiXCircle } from "react-icons/bi";
 import {
+  useActualizarEstadoTareasMutation,
   useActualizarTareasMutation,
   useEliminarTareasMutation,
 } from "../Redux/Api";
 import "../App.css";
+import { useAuthStore } from "../Redux/zustand";
 
 export const TodoItem = ({ todo }) => {
   const [actualizar, setActualizar] = useState(false);
   const [tarea, setTarea] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [indexEdit, setIndexEdit] = useState("");
-
+  const profileAuth = useAuthStore((state) => state.profile);
   const [edit] = useActualizarTareasMutation();
+  const [editState] = useActualizarEstadoTareasMutation();
   const [eliminar] = useEliminarTareasMutation();
   const handleDelete = (_id) => {
     eliminar({
       _id,
+      token: profileAuth?.token,
     });
   };
   const handleUpdateTodo = (_id, tarea, descripcion) => {
@@ -27,6 +33,16 @@ export const TodoItem = ({ todo }) => {
         tarea: tarea,
         descripcion: descripcion,
       },
+      token: profileAuth?.token,
+    });
+  };
+  const handleUpdateState = (_id, estado) => {
+    editState({
+      _id: _id,
+      datoEstadoTask: {
+        estado,
+      },
+      token: profileAuth?.token,
     });
   };
 
@@ -38,7 +54,7 @@ export const TodoItem = ({ todo }) => {
     e.preventDefault();
     setDescripcion(e.target.value);
   };
-  console.log(todo);
+  // console.log(todo);
   return (
     <>
       {indexEdit == todo._id && actualizar ? (
@@ -90,11 +106,39 @@ export const TodoItem = ({ todo }) => {
         // Agregar tareas vista principal
         <li className="li">
           <div>
+            {todo.estado == false ? (
+              <button
+                onClick={(e) => {
+                  handleUpdateState(todo._id, todo.estado === false);
+                }}
+                // className="btn-3"
+              >
+                <AiOutlineCheckCircle />
+              </button>
+            ) : (
+              <button
+                onClick={(e) => {
+                  handleUpdateState(todo._id, todo.estado === false);
+                }}
+                // className="btn-3"
+              >
+                <BiXCircle />
+              </button>
+            )}
             <div className="conten_li">
               <p style={{ fontWeight: "bold" }}>{todo.tarea}</p>
             </div>
             <div className="conten_li">
               <p>{todo.descripcion}</p>
+            </div>
+            <div className="conten_li">
+              <p>
+                {todo.estado == true ? (
+                  <b style={{ color: "#21a3a3" }}>completado</b>
+                ) : (
+                  <b style={{ color: "#ac0d0d" }}>incompleta</b>
+                )}
+              </p>
             </div>
           </div>
           <div className="btns">

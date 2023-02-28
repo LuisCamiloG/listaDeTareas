@@ -46,7 +46,7 @@ function NavBar() {
             </li>
           </ul>
           <ul>
-            <li>
+            <li style={{ listStyle: "none" }}>
               <Menu>
                 <MenuButton
                   as={Button}
@@ -69,13 +69,26 @@ function NavBar() {
                     padding="10px"
                   >
                     <Box display={"flex"} justifyContent="center">
-                      <Text fontWeight={700}>Profile</Text>
+                      <Text fontWeight={700}>Perfil del usuario</Text>
                     </Box>
-                    <Text textAlign={"center"} fontWeight={600}>
+                    <br />
+                    <Text textAlign={"initial"} fontWeight={600}>
+                      Nombre:
+                    </Text>
+                    <Text textAlign={"initial"}>
+                      {profileAuth?.user?.nombre}
+                    </Text>
+                    <Text textAlign={"initial"} fontWeight={600}>
                       Usuario:
                     </Text>
-                    <Text textAlign={"center"}>
+                    <Text textAlign={"initial"}>
                       {profileAuth?.user?.usuario}
+                    </Text>
+                    <Text textAlign={"initial"} fontWeight={600}>
+                      Celular:
+                    </Text>
+                    <Text textAlign={"initial"}>
+                      {profileAuth?.user?.celular}
                     </Text>
                   </Box>
                   <MenuDivider />
@@ -144,19 +157,25 @@ function NavBar() {
             <ul className="ul-home">
               <li>
                 <label className="label-icons">
-                  <FaFacebook className="li-icons" />
+                  <a href="https://es-la.facebook.com/" target="_blank">
+                    <FaFacebook className="li-icons" />
+                  </a>
                   /TodoList
                 </label>
               </li>
               <li>
                 <label className="label-icons">
-                  <FaInstagram className="li-icons" />
+                  <a href="https://www.instagram.com/" target="_blank">
+                    <FaInstagram className="li-icons" />
+                  </a>
                   /TodoList
                 </label>
               </li>
               <li>
                 <label className="label-icons">
-                  <FaTwitter className="li-icons" />
+                  <a href="https://twitter.com/?lang=es" target="_blank">
+                    <FaTwitter className="li-icons" />
+                  </a>
                   #TodoList
                 </label>
               </li>

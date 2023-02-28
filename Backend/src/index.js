@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const router = require("./routes/user");
+const router = require("./routes/tareas");
 const routerUser = require("./routes/usuarios");
 require("dotenv").config();
 const cors = require("cors")
@@ -14,7 +14,7 @@ app.use(cors({
   credentials: true
 }))
 app.use("/api", router);
-app.use("/api/usuarios", routerUser);
+app.use("/api", routerUser);
 app.get("", (req, res) => {
   res.send("Esta en mi api REST");
 });
